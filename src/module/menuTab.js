@@ -1,10 +1,11 @@
-import { createTabButton } from '../util.js';
+import '../util.js';
 import './menuTab.css';
 
 export function createMenuTab() {
     const menuContent = document.createElement('div');
     menuContent.textContent = 'Menu tab content';
-    const menuButton = createTabButton('Contact', () => {
+    const menuButton = document.getElementById('Menu');
+    menuButton.addEventListener('click', () => {
       displayMenuContent(createMenuTab);
     });
 
