@@ -6,7 +6,7 @@ export function createHomeTab() {
     homeContent.textContent = 'Contact home content';
     const homeButton = document.getElementById('Home');
     homeButton.addEventListener('click', () => {
-      displayHomeContent(createHomeTab);
+      displayTabContent(createHomeTab);
     });
     
     homeContent.appendChild(homeButton);
