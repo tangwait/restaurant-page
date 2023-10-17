@@ -1,7 +1,7 @@
 import { createHomeTab } from './module/homeTab.js';
 import { createContactTab } from './module/contactTab.js';
 import { createMenuTab } from './module/menuTab.js';
-import { createTabButton } from './util.js';
+import { createTabs } from './util.js';
 import './style.css';
 
 const container = document.querySelector('#container');
@@ -35,17 +35,18 @@ function createSushiContent() {
   return sushiContentContainer
 }
 
-const homeTabButton = createTabButton('Home', () => {
-  displayTabContent(createHomeTab);
-});
+// const homeTabButton = createTabButton('Home', () => {
+//   displayTabContent(createHomeTab);
+// });
 
-const contactTabButton = createTabButton('Contact', () => {
-  displayTabContent(createContactTab);
-});
+// const contactTabButton = createTabButton('Contact', () => {
+//   displayTabContent(createContactTab);
+// });
 
-const menuTabButton = createTabButton('Menu', () => {
-  displayTabContent(createMenuTab);
-});
+// const menuTabButton = createTabButton('Menu', () => {
+//   displayTabContent(createMenuTab);
+// });
+createButtonsContainer();
 
 const buttonsContainer = createButtonsContainer();
 const headerContainer = createHeader();
@@ -54,11 +55,8 @@ const sushiContainer = createSushiContent();
 container.appendChild(headerContainer);
 headerContainer.appendChild(buttonsContainer);
 container.appendChild(sushiContainer);
-buttonsContainer.appendChild(homeTabButton);
-buttonsContainer.appendChild(contactTabButton);
-buttonsContainer.appendChild(menuTabButton);
+createTabs();
 
-container.appendChild(sushiContainer);
 
 function displayTabContent(tabContentFunction) {
     container.innerHTML = '';
