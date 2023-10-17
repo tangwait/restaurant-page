@@ -1,0 +1,56 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    flex: 1;
+}
+
+.headerContainer {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    padding: 5px;
+}
+
+.headerTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tab {
+  display: flex;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  margin-right: 10px;
+}
+
+.sushiContentContainer {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.tab:hover {
+    background-color: #e0e0e0;
+}
+
+.tab.active {
+    background-color: #ccc;
+}
+
+.tab-content {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
