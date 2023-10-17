@@ -48,7 +48,7 @@ headerContainer.appendChild(buttonsContainer);
 container.appendChild(sushiContainer);
 
   console.log("checking 1 2 3")
-createTabs();
+  createTabs();
 
 function displayTabContent(tabContent) {
     container.innerHTML = '';
@@ -74,8 +74,8 @@ const menuButton = document.getElementById('Menu');
 menuButton.addEventListener('click', () => {
   const tabContent = createMenuTab();
   displayTabContent(tabContent);
-}
-);
+});
+
 
 // const homeTabButton = createTabButton('Home', () => {
 //   displayTabContent(createHomeTab);

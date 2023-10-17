@@ -11,25 +11,23 @@
     homeTabButton.classList.add('tab');
     homeTabButton.id = "Home";
     homeTabButton.textContent = "Home";
-    
+
     console.log("create tabs!")
-    
+
     const contactTabButton = document.createElement('button');
     contactTabButton.classList.add('tab');
     contactTabButton.id = "Contact";
     contactTabButton.textContent = "Contact";
-    
-    console.log("create tabs!1")
 
+    console.log("create tabs!1")    
     const menuTabButton = document.createElement('button');
     menuTabButton.classList.add('tab');
     menuTabButton.id = "Menu";
-    menuTabButton.textContent = "Menu";
-
+    menuTabButton.textContent = "Menu"; 
     console.log("create tabs!2")
-
+        
     const buttonContainer = document.querySelector('#container');
-    buttonContainer.textContent = "hello";
+    buttonContainer.appendChild(homeTabButton);
     buttonContainer.appendChild(contactTabButton);
     buttonContainer.appendChild(menuTabButton);
 }
