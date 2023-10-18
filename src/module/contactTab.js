@@ -11,5 +11,5 @@ export function createContactTab() {
     });
     
     contactContent.appendChild(contactButton);
-    return tabContent;
+    return contactContent;
 };
