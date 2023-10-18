@@ -1,35 +1,38 @@
 import { createHomeTab } from './module/homeTab.js';
 import { createContactTab } from './module/contactTab.js';
 import { createMenuTab } from './module/menuTab.js';
-import { createTabs } from './util.js';
+import * as util from './util.js';
 import './style.css';
 
-const container = document.querySelector('#container');
+// const container = document.querySelector('#container');
 
-function createHeader() {
-  const headerContainer = document.createElement('div');
-  headerContainer.classList.add('headerContainer');
-  console.log("headerTitle is here")
+// function createHeader() {
+//   const headerContainer = document.createElement('div');
+//   headerContainer.classList.add('headerContainer');
+//   console.log("headerTitle is here")
 
-  const headerTitle = document.createElement('div');
-  headerTitle.classList.add('headerTitle');
-  headerTitle.textContent = "SushiSashimi!"
-  headerTitle.addEventListener('click', () => {
-    displayTabContent(createHomeTab);
-  });
+//   const headerTitle = document.createElement('div');
+//   headerTitle.classList.add('headerTitle');
+//   headerTitle.textContent = "SushiSashimi!"
+//   headerTitle.addEventListener('click', () => {
+//     displayTabContent(createHomeTab);
+//   });
 
-  headerContainer.appendChild(headerTitle);
+//   headerContainer.appendChild(headerTitle);
 
-  return headerContainer;
-}
+//   return headerContainer;
+// }
 
-function createButtonsContainer() {
-  const buttonContainer = document.createElement('div');
-  buttonContainer.classList.add('buttonContainer');
-  console.log("createButtonsContainer is here")
-  return buttonContainer;
-}
+// function createButtonsContainer() {
+//   const buttonContainer = document.createElement('div');
+//   buttonContainer.classList.add('buttonContainer');
+//   console.log("createButtonsContainer is here")
+//   return buttonContainer;
+// }
 
+util.createHeader();
+util.createButtonsContainer();
+util.createTabs();
 
 function createSushiContent() {
   const sushiContentContainer = document.createElement('div');
@@ -39,21 +42,16 @@ function createSushiContent() {
   return sushiContentContainer
 }
 
-const headerContainer = createHeader();
-const buttonsContainer = createButtonsContainer();
 const sushiContainer = createSushiContent();
 
-container.appendChild(headerContainer);
-headerContainer.appendChild(buttonsContainer);
 container.appendChild(sushiContainer);
 
   console.log("checking 1 2 3")
-  createTabs();
 
 function displayTabContent(tabContent) {
     container.innerHTML = '';
     container.appendChild(tabContent);
-    console.log("displayTabContent hahaha")
+    console.log("displayTabContent works")
 }
 
 console.log("homebutton hu hu huh")
