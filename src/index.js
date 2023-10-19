@@ -1,88 +1,61 @@
 import { createHomeTab } from './module/homeTab.js';
 import { createContactTab } from './module/contactTab.js';
 import { createMenuTab } from './module/menuTab.js';
-import * as util from './util.js';
 import './style.css';
 
-// const container = document.querySelector('#container');
+const mainContentTitle = document.createElement('div');
+mainContentTitle.classList.add('mainContentTitle');
 
-// function createHeader() {
-//   const headerContainer = document.createElement('div');
-//   headerContainer.classList.add('headerContainer');
-//   console.log("headerTitle is here")
+function createHeader() {
+    const headerContainer = document.createElement('div');
+    headerContainer.classList.add('headerContainer');
 
-//   const headerTitle = document.createElement('div');
-//   headerTitle.classList.add('headerTitle');
-//   headerTitle.textContent = "SushiSashimi!"
-//   headerTitle.addEventListener('click', () => {
-//     displayTabContent(createHomeTab);
-//   });
+    const headerTitle = document.createElement('div');
+    headerTitle.classList.add('headerTitle');
+    headerTitle.textContent = "SushiSashimi!"
 
-//   headerContainer.appendChild(headerTitle);
+    const buttonContainer = document.createElement('div');
+    buttonContainer.classList.add('buttonContainer');
 
-//   return headerContainer;
-// }
+    const allContent = document.createElement('div');
+    allContent.classList.add('allContent');
 
-// function createButtonsContainer() {
-//   const buttonContainer = document.createElement('div');
-//   buttonContainer.classList.add('buttonContainer');
-//   console.log("createButtonsContainer is here")
-//   return buttonContainer;
-// }
+    const homeTabButton = createTabButton("Home", createHomeTab);
+    const contactTabButton = createTabButton("Contact", createContactTab);
+    const menuTabButton = createTabButton("Menu", createMenuTab);
 
-util.createHeader();
-util.createButtonsContainer();
-util.createTabs();
+    const container = document.querySelector('#container');
 
-function createSushiContent() {
-  const sushiContentContainer = document.createElement('div');
-  sushiContentContainer.classList.add('sushiContentContainer');
-  sushiContentContainer.textContent = "Welcome to SushiSashimi!"
-  console.log("sushiContentContainer is here");
-  return sushiContentContainer
+    headerContainer.appendChild(headerTitle);
+    headerContainer.appendChild(buttonContainer);
+    
+    buttonContainer.appendChild(homeTabButton);    
+    buttonContainer.appendChild(contactTabButton);
+    buttonContainer.appendChild(menuTabButton);
+    
+    container.appendChild(headerContainer);
+    container.appendChild(allContent);
+
+    const mainContentTitle = document.createElement('div');
+    mainContentTitle.classList.add('mainContentTitle');
+    mainContentTitle.textContent = "main content title"
+
+    const mainContent = document.createElement('div');
+    mainContent.classList.add('mainContent');
+    mainContent.textContent = "SushiSashimi content"
+
+    allContent.appendChild(mainContentTitle);
+    allContent.appendChild(mainContent);
+
+    return headerContainer;
 }
 
-const sushiContainer = createSushiContent();
+createHeader();
 
-container.appendChild(sushiContainer);
-
-  console.log("checking 1 2 3")
-
-function displayTabContent(tabContent) {
-    container.innerHTML = '';
-    container.appendChild(tabContent);
-    console.log("displayTabContent works")
+function createTabButton(tabName, clickHandler) {
+    const tabButton = document.createElement('button');
+    tabButton.classList.add('tab');
+    tabButton.textContent = tabName;
+    tabButton.addEventListener('click', clickHandler);
+    return tabButton;
 }
-
-console.log("homebutton hu hu huh")
-const homeButton = document.getElementById('Home');
-homeButton.addEventListener('click', () => {
-  const tabContent = createHomeTab();
-  displayTabContent(tabContent);
-});
-
-console.log("contactbutton")
-const contactButton = document.getElementById('Contact');
-contactButton.addEventListener('click', () => {
-  const tabContent = createContactTab();
-  displayTabContent(tabContent);
-});
-
-const menuButton = document.getElementById('Menu');
-menuButton.addEventListener('click', () => {
-  const tabContent = createMenuTab();
-  displayTabContent(tabContent);
-});
-
-
-// const homeTabButton = createTabButton('Home', () => {
-//   displayTabContent(createHomeTab);
-// });
-
-// const contactTabButton = createTabButton('Contact', () => {
-//   displayTabContent(createContactTab);
-// });
-
-// const menuTabButton = createTabButton('Menu', () => {
-//   displayTabContent(createMenuTab);
-// });
