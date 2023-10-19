@@ -1,15 +1,12 @@
-import '../util.js';
 import './contactTab.css';
 
 export function createContactTab() {
-    const contactContent = document.createElement('div');
-    contactContent.textContent = 'Contact tab content';
-    
-    const contactButton = document.getElementById('Contact');
-    contactButton.addEventListener('click', () => {
-      displayTabContent(createContactTab);
-    });
-    
-    contactContent.appendChild(contactButton);
-    return contactContent;
+  const mainContentTitle = document.querySelector(".mainContentTitle")
+  mainContentTitle.textContent = "The contact tab title"
+
+  const contactTabContent = document.querySelector('.mainContent');
+  contactTabContent.textContent = 'This is the contact tab content';
+ 
+  return contactTabContent;
 };
+

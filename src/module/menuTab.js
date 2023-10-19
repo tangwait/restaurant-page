@@ -1,15 +1,12 @@
-import '../util.js';
 import './menuTab.css';
 
 export function createMenuTab() {
-    const menuContent = document.createElement('div');
-    menuContent.textContent = 'Menu tab content';
-    
-    const menuButton = document.getElementById('Menu');
-    menuButton.addEventListener('click', () => {
-      displayTabContent(createMenuTab);
-    });
-    
-    menuContent.appendChild(menuButton);
-    return menuContent;
-};
+    const mainContentTitle = document.querySelector(".mainContentTitle")
+    mainContentTitle.textContent = "this is the menu tab title"
+  
+    const menuTabContent = document.querySelector('.mainContent');
+    menuTabContent.textContent = 'This is the menutab content';
+    return menuTabContent;
+  };
+  
+  
