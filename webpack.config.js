@@ -6,8 +6,7 @@ module.exports = {
     index: './src/index.js',
     menu: './src/module/menuTab.js',
     home: './src/module/homeTab.js',
-    contact: './src/module/contactTab.js',  
-    util: './src/util.js',          
+    contact: './src/module/contactTab.js',           
   },
   output: {
     filename: '[name].bundle.js',
