@@ -1,13 +1,16 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
   entry: {
-    index: './src/index.js',
-    menu: './src/module/menuTab.js',
-    home: './src/module/homeTab.js',
-    contact: './src/module/contactTab.js',           
+    index: './src/index.js',          
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Output Management',
+    }),
+  ],
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
