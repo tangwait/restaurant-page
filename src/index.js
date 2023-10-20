@@ -2,6 +2,8 @@ import { createHomeTab } from './module/homeTab.js';
 import { createContactTab } from './module/contactTab.js';
 import { createMenuTab } from './module/menuTab.js';
 import './style.css';
+import { createMainTab } from './module/mainTab.js';
+import icon from './logo-icon.jpg';
 
 const mainContentTitle = document.createElement('div');
 mainContentTitle.classList.add('mainContentTitle');
@@ -13,6 +15,12 @@ function createHeader() {
     const headerTitle = document.createElement('div');
     headerTitle.classList.add('headerTitle');
     headerTitle.textContent = "SushiSashimi!"
+    headerTitle.addEventListener('click', () => {
+      createMainTab();
+    })
+
+    const logoIcon = new Image();
+    logoIcon.src = icon;
 
     const buttonContainer = document.createElement('div');
     buttonContainer.classList.add('buttonContainer');
@@ -28,6 +36,8 @@ function createHeader() {
 
     headerContainer.appendChild(headerTitle);
     headerContainer.appendChild(buttonContainer);
+
+    headerTitle.appendChild(logoIcon);
     
     buttonContainer.appendChild(homeTabButton);    
     buttonContainer.appendChild(contactTabButton);
@@ -38,16 +48,28 @@ function createHeader() {
 
     const mainContentTitle = document.createElement('div');
     mainContentTitle.classList.add('mainContentTitle');
-    mainContentTitle.textContent = "main content title"
+    mainContentTitle.textContent = "Welcome to SushiSashimi!"
 
     const mainContent = document.createElement('div');
     mainContent.classList.add('mainContent');
-    mainContent.textContent = "SushiSashimi content"
+    mainContent.textContent = "Find out more information about"
+
+    const mainHomeButton = createTabButton("Home", createHomeTab);
+    const mainContactButton = createTabButton("Contact", createContactTab);
+    const mainMenuButton = createTabButton("Menu", createMenuTab);
+
+    const mainContent2 = document.createElement('div');
+    mainContent2.classList.add('mainContent2');
+    mainContent2.textContent = "Join us for the best sushi experience today!"
+
+    mainContent2.appendChild(mainHomeButton);
+    mainContent2.appendChild(mainContactButton);
+    mainContent2.appendChild(mainMenuButton);
 
     allContent.appendChild(mainContentTitle);
     allContent.appendChild(mainContent);
+    allContent.appendChild(mainContent2);
 
-    return headerContainer;
 }
 
 createHeader();
