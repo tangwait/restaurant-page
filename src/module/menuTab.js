@@ -6,7 +6,9 @@ export function createMenuTab() {
   
     const menuTabContent = document.querySelector('.mainContent');
     menuTabContent.textContent = 'This is the menutab content';
-    return menuTabContent;
+    
+    const menuTabContent2 = document.querySelector('.mainContent2');
+    menuTabContent2 = 'Our menu is made by amazing sushi chefs!'
   };
   
   
